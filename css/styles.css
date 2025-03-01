@@ -3,6 +3,8 @@
 }*/
 body {
   background-image: url(../actualbackground.jpg);
+  background-repeat: no-repeat ;
+  background-attachment: fixed;
 }
 /*.background {
    position: fixed;
@@ -223,7 +225,7 @@ opacity: 0;
   position: absolute;
   display:flex;
   justify-content: center;
-  background-color: grey;
+  background-color: ;
   width: 600px;
   height: 80px;
   top: 670px;
@@ -231,7 +233,7 @@ opacity: 0;
   transform: translate(-50%, -50%);
 }
 
-.aboutinfo div {
+.aboutinfocontainer div {
   font-size: 20px;
   color: white;
 }
@@ -256,10 +258,10 @@ opacity: 0;
   position: absolute;
   display:flex;
   justify-content: space-around;
-  background-color: grey;
+  background-color: ;
   width: 1200px;
-  height: 300px;
-  top: 1200px;
+  height: 500px;
+  top: 1300px;
   margin-left: 50%;
   transform: translate(-50%, -50%);
 
@@ -277,17 +279,18 @@ opacity: 0;
   position: relative;
   display: flex;
   justify-content: center;
-  background-color: green;
+  background-color: ;
   margin: 20px;
-  width: 250;
+  width: 250px;
 }
 
-.gameenginecontainer div, .pincontainer div, .fileorganizercontainer div{
+.gameenginecontainer img, .pincontainer img, .fileorganizercontainer img {
   position: absolute;
   top: 30px;
   width: 250px;
-  height: 200px;
+  height: 50;
   padding:  0px;
   color: white;
-  background-color: blue;
+  background-color: ;
+  border-radius: 15px;
 }
