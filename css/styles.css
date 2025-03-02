@@ -26,7 +26,7 @@ body {
   margin: 60px;
   color:white;
 }
-.Home::before, .Projects::before, .About::before, .Contact::before {
+.Home::before, .Projects::before, .About::before, .Contact::before, .git::before, .linkedin::before {
   position: absolute;
   content: '';
   background: white;
@@ -35,7 +35,7 @@ body {
   width: 0%;
   transition: 140ms;
 }
-.Home:hover:before, .Projects:hover:before, .About:hover:before, .Contact:hover:before {
+.Home:hover:before, .Projects:hover:before, .About:hover:before, .Contact:hover:before, .git:hover:before, .linkedin:hover:before {
   width: 100%;
 }
 
@@ -225,16 +225,15 @@ opacity: 0;
   position: absolute;
   display:flex;
   justify-content: center;
-  background-color: ;
   width: 600px;
   height: 80px;
-  top: 670px;
+  top: 700px;
   margin-left: 50%;
   transform: translate(-50%, -50%);
 }
 
 .aboutinfocontainer div {
-  font-size: 20px;
+  font-size: 19px;
   color: white;
 }
 
@@ -242,11 +241,10 @@ opacity: 0;
 .iconcontainer {
   position: absolute;
   display:flex;
-  background-color:;
   justify-content: center;
   width: 600px;
   height: 80px;
-  top: 750px;
+  top: 780px;
   margin-left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -254,7 +252,6 @@ opacity: 0;
 .ccontainer, .cpluscontainer, .pythoncontainer, .htmlcontainer, .csscontainer, .reactcontainer {
  display: flex;
  justify-content: space-between;
- background-color: ;
  width: 100;
  height: 60px;
  bottom: 10px;
@@ -263,8 +260,50 @@ opacity: 0;
 .ccontainer img, .cpluscontainer img, .pythoncontainer img, .htmlcontainer img, .csscontainer img, .reactcontainer img {
   padding: 10px;
   box-sizing: border-box;
-  
-  
+  transition: 100ms;
+}
+
+.ccontainer img:hover, 
+.cpluscontainer img:hover, 
+.pythoncontainer img:hover,
+.htmlcontainer img:hover, 
+.csscontainer img:hover, 
+.reactcontainer img:hover  {
+
+  transform:scale(1.6,1.6);
+
+}
+
+.githubicon {
+  position:absolute;
+  left: 780px;
+  top: 10px;
+  transition: 100ms;
+}
+.linkedinicon {
+  position:absolute;
+  left: 950px;
+  top: 10px;
+  transition: 100ms;
+}
+.githubicon:hover , .linkedinicon:hover {
+  transform: scale(1.4,1.4)
+}
+
+.git {
+  position:absolute;
+  color:white;
+  font-size: 16px;
+  top: 22.2px;
+  left: 730px;
+
+}
+.linkedin {
+  position:absolute;
+  color:white;
+  font-size: 16px;
+  top: 22.2px;
+  left: 890px;
 }
 /* Icon settings and positioning^ */
 
@@ -289,21 +328,21 @@ opacity: 0;
   position: absolute;
   display:flex;
   justify-content: space-around;
-  background-color: ;
   width: 1200px;
-  height: 500px;
+  height: 400px;
   top: 1300px;
   margin-left: 50%;
   transform: translate(-50%, -50%);
 
 }
 
-.projectscontainer div {
+.projectscontainer a {
   width: 400px;
   font-size: 20px;
   color: white;
   display:flex;
   justify-content: center;
+  transition: 200ms;
 }
 
 .gameenginecontainer, .pincontainer, .fileorganizercontainer{
@@ -314,6 +353,13 @@ opacity: 0;
   width: 250px;
 }
 
+.projectscontainer a:hover 
+  {
+
+  transform:scale(1.1,1.1);
+
+}
+
 .gameenginecontainer img, .pincontainer img, .fileorganizercontainer img {
   position: absolute;
   top: 30px;
@@ -321,6 +367,5 @@ opacity: 0;
   height: 50;
   padding:  0px;
   color: white;
-  background-color: ;
   border-radius: 15px;
 }
