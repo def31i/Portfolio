@@ -1,86 +1,71 @@
 /* {
   outline: 2px solid red;
 }*/
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
 body {
   background-image: url(../actualbackground.jpg);
   background-repeat: no-repeat ;
   background-attachment: fixed;
 }
-/*.background {
-   position: fixed;
-   top: 0px;
-   left: 0px;
-   right: 10px;
-   width: 100%;
-   height: 100%;
-   background-color: #040209;
-   z-index: -30;
-   */
 
+@media (max-width:600px) {
+  .topwrapper {
+    display:flex;
+    justify-content: space-around;
+    align-content: center;
+    width: 100%;
+    gap: 10px;
+    font-size: 10px;
+  }
+}
+.topwrapper {
+  display:flex; 
+  background: lightgray;
+  justify-content: center;
+  align-content:center;
+  width: 100%;
+  gap: 50px;
+  flex: 1 1 0;
+}
 
-.Home, .Projects, .About, .Contact {
-  position: relative;
+.Home, .Projects, .About, .Contact, .Github, .link {
+  position: static;
   border: 0px;
   padding: 0px;
-  top: 10px;
-  margin: 60px;
+  margin: 0px;
   color:white;
 }
-.Home::before, .Projects::before, .About::before, .Contact::before, .git::before, .linkedin::before {
-  position: absolute;
-  content: '';
-  background: white;
-  height: 1.5px;
-  bottom: 0;
-  width: 0%;
-  transition: 140ms;
-}
-.Home:hover:before, .Projects:hover:before, .About:hover:before, .Contact:hover:before, .git:hover:before, .linkedin:hover:before {
+
+.introwrapper {
+  display: flex;
+  position: relative;
+  background-color: white;
   width: 100%;
-}
+  justify-content: center;
+  top:200px;
 
-p1 {
-    color: white;
 }
-p1 {
-
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.leftbracket, .rightbracket {
-position:absolute;
-font-size: 80px;
-top: 240px;
-color:white;
-animation: fadeInForBrackets 3s;
-opacity: 0;
-}
-.leftbracket{ left:230px; }
-.rightbracket{ right: 230px;}
-
 .Introline1, .Introline2, .Introline3, .Introline4 {
     position: absolute;
-    animation: fadeInForIntro 4.5s;
     text-align: center;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    animation: fadeInForIntro 4.5s;
     font-size: 30px;
     color:white;
     animation-iteration-count: 1;
     opacity: 0;
+    flex: 1 2 0;
+
 }
 .Introline5 {
    position: absolute;
    animation: fadeInForIntrolast 4.5s forwards;
-   text-align: center;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
    font-size: 30px;
    color:white;
    animation-iteration-count: 1;
-  opacity: 0;
+   opacity: 0;
+   flex: 1 2 0;
 
 }
 
@@ -108,111 +93,23 @@ opacity: 0;
   50% {opacity: 1;}
   100% {opacity: 1;}
 }
-.dropzero1 {
- position: relative;
- font-size: 20px;
- animation: movebinary1 13s;
- animation-iteration-count: infinite;
- animation-delay: 7s;
- color: grey;
- z-index: -20;
- opacity:0;
-}
-
-.dropzero2 {
- position: relative;
- font-size: 20px;
- animation: movebinary2 13s;
- animation-iteration-count: infinite;
- animation-delay: 3s;
- color: grey;
- z-index: -21;
- opacity:0;
-
-}
-.dropone1 {
- position: relative;
- font-size: 20px;
- animation: movebinary3 13s;
- animation-iteration-count: infinite;
- animation-delay: 4.6s;
- color: grey;
- z-index: -22;
- opacity: 0;
-}
-.dropone2{
- position: relative;
- font-size: 20px;
- animation: movebinary4 13s;
- animation-iteration-count: infinite;
- animation-delay: 1s;
- color: grey;
- z-index: -23;
- opacity: 0;
-}
-.dropone3{
- position: relative;
- font-size: 20px;
- animation: movebinary5 13s;
- animation-iteration-count: infinite;
- animation-delay: 8s;
- color: grey;
- z-index: -24;
- opacity: 0;
-
-}
-
-@keyframes movebinary1{
-  0%{opacity:0}
-  30%{opacity:0.5}
-  50%{opacity:1}
-  100%{opacity:0}
-  from{left: 500px; top: 0px;}
-  to{left: 500px; top: 1000px;}
-}
-@keyframes movebinary2{
-  0%{opacity:0}
-  30%{opacity:0.5}
-  50%{opacity:1}
-  100%{opacity:0}
-  from{left: 950px; top: 0px;}
-  to{left: 950px; top: 1000px;}
-}
-@keyframes movebinary3{
-  0%{opacity:0}
-  30%{opacity:0.5}
-  50%{opacity:1}
-  100%{opacity:0}
-  from{left: 600px; top: 0px;}
-  to{left: 600px; top: 1000px;}
-}
-@keyframes movebinary4{
-  0%{opacity:0}
-  30%{opacity:0.5}
-  50%{opacity:1}
-  100%{opacity:0}
-  from{left: 200px; top: 0px;}
-  to{left: 200px; top: 1000px;}
-}
-@keyframes movebinary5{
-  0%{opacity:0}
-  30%{opacity:0.5}
-  50%{opacity:1}
-  100%{opacity:0}
-  from{left: 670px; top: 0px;}
-  to{left: 670px; top: 1000px;}
-}
 
 
-.aboutheader {
-  text-align: center;
-  position: absolute;
+.aboutheaderwrapper {
+  position: relative;
+  display:flex;
+  width: 100%;
+  justify-content: center;
+  top: 400px;
+  background-color: grey;
+}
+
+.aboutword {
+  position: static;
   color: white;
   font-size: 30px;
-  top: 580px;
-  left: 50%;
-  transform: translate( -50%, -50%);
   animation: aboutanimation 4.2s infinite;
+  flex-shrink: 2;
 }
 
 @keyframes aboutanimation {
@@ -222,45 +119,80 @@ opacity: 0;
 }
 
 .aboutinfocontainer {
-  position: absolute;
+  position: relative;
+  background-color: grey;
   display:flex;
   justify-content: center;
-  width: 600px;
-  height: 80px;
-  top: 700px;
-  margin-left: 50%;
-  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100px;
+  top: 450px;
 }
 
 .aboutinfocontainer div {
-  font-size: 19px;
+  font-size: 15px;
   color: white;
+  text-align: center;
 }
 
+
 /*Icon settings and positioning */
+@media (max-width:600px) {
+  .iconcontainer {
+    position: relative;
+    display:flex;
+    justify-content: center;
+    background-color: green;
+    width: 100%;
+    height: 10px;
+    top: 460px;
+    margin-left: 50%;
+    transform: translate(-50%, -50%);
+    gap: 10px;
+  }
+   .ccontainer, .cpluscontainer, .pythoncontainer, .htmlcontainer, .csscontainer, .jscontainer, .reactcontainer {
+    display: flex;
+    background-color: green;
+    height: 30px;
+    bottom: 10px;
+    margin: 5px;
+    box-sizing: border-box;
+    flex-shrink: 2;
+      
+   }
+     .ccontainer img, .cpluscontainer img, .pythoncontainer img, .htmlcontainer img, .csscontainer img, .jscontainer img, .reactcontainer img {
+       transition: 100ms;
+       padding: 0px;
+  }
+}
+
+@media (min-width:601px) {
+
 .iconcontainer {
-  position: absolute;
+  position: relative;
   display:flex;
-  justify-content: center;
-  width: 700px;
+  justify-content:center;
+  background-color: grey;
+  width: 100%;
   height: 80px;
-  top: 780px;
+  top: 540px;
   margin-left: 50%;
   transform: translate(-50%, -50%);
-}
+ }
 
 .ccontainer, .cpluscontainer, .pythoncontainer, .htmlcontainer, .csscontainer, .jscontainer, .reactcontainer {
  display: flex;
- justify-content: space-between;
- width: 100;
+ background-color: green;
  height: 60px;
  bottom: 10px;
  margin: 10px;
-}
-.ccontainer img, .cpluscontainer img, .pythoncontainer img, .htmlcontainer img, .csscontainer img, .jscontainer img, .reactcontainer img {
+ box-sizing: border-box;
+ flex-shrink: 2;
+ }
+ .ccontainer img, .cpluscontainer img, .pythoncontainer img, .htmlcontainer img, .csscontainer img, .jscontainer img, .reactcontainer img {
   padding: 10px;
   box-sizing: border-box;
   transition: 100ms;
+ }
 }
 
 .ccontainer img:hover, 
@@ -275,38 +207,9 @@ opacity: 0;
 
 }
 
-.githubicon {
-  position:absolute;
-  left: 780px;
-  top: 10px;
-  transition: 100ms;
-}
-.linkedinicon {
-  position:absolute;
-  left: 950px;
-  top: 10px;
-  transition: 100ms;
-}
-.githubicon:hover , .linkedinicon:hover {
-  transform: scale(1.4,1.4)
-}
-
-.git {
-  position:absolute;
-  color:white;
-  font-size: 16px;
-  top: 22.2px;
-  left: 730px;
-
-}
-.linkedin {
-  position:absolute;
-  color:white;
-  font-size: 16px;
-  top: 22.2px;
-  left: 890px;
-}
 /* Icon settings and positioning^ */
+
+
 
 
 .projectsheader{
@@ -325,7 +228,8 @@ opacity: 0;
   50% {opacity: 0.15}
   100% {opacity: 1}
 }
-.projectscontainer {
+@media (min-width:601px) { 
+ .projectscontainer {
   position: absolute;
   display:flex;
   justify-content: space-around;
@@ -334,33 +238,37 @@ opacity: 0;
   top: 1300px;
   margin-left: 50%;
   transform: translate(-50%, -50%);
-
+ }
 }
-
-.projectscontainer a {
+ @media (min-width:601px) {
+  .projectscontainer a {
   width: 400px;
   font-size: 20px;
   color: white;
   display:flex;
   justify-content: center;
   transition: 200ms;
+ }
 }
 
-.gameenginecontainer, .pincontainer, .fileorganizercontainer{
+ @media (min-width:601px) {
+ .gameenginecontainer, .pincontainer, .fileorganizercontainer {
   position: relative;
   display: flex;
   justify-content: center;
   margin: 20px;
   width: 250px;
+ }  
 }
 
-.projectscontainer a:hover 
+ .projectscontainer a:hover 
   {
 
   transform:scale(1.1,1.1);
 
-}
+ }
 
+@media (min-width:601px){
 .gameenginecontainer img, .pincontainer img, .fileorganizercontainer img {
   position: absolute;
   top: 30px;
@@ -369,4 +277,154 @@ opacity: 0;
   padding:  0px;
   color: white;
   border-radius: 15px;
+ }
+} 
+
+
+
+@media (max-width:600px) {
+  .projectscontainer {
+    position: relative;
+    display:flex;
+    background-color: blue;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items:center;
+    width: 100%;
+    height: 500px;
+    top: 900px;
+  }
+   .projectscontainer a {
+      text-align: center;
+      font-size: 11px;
+      margin: 10px;
+      box-sizing: border-box;
+      color: white;
+      display:flex;
+      flex-direction: column;
+      justify-content: center;
+      transition: 200ms;
+   }
+      .gameenginecontainer img, .pincontainer img, .fileorganizercontainer img {
+        position: relative;
+        margin: 0px;
+        height: 110px;
+        width: 200px;
+        padding:  0px;
+        color: white;
+        border-radius: 10px;
+    
+   
+  }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*---Binary background animations and settings---*/
+.dropzero1 {
+  position: relative;
+  font-size: 20px;
+  animation: movebinary1 13s;
+  animation-iteration-count: infinite;
+  animation-delay: 7s;
+  color: grey;
+  z-index: -20;
+  opacity:0;
+ }
+ 
+ .dropzero2 {
+  position: relative;
+  font-size: 20px;
+  animation: movebinary2 13s;
+  animation-iteration-count: infinite;
+  animation-delay: 3s;
+  color: grey;
+  z-index: -21;
+  opacity:0;
+ 
+ }
+ .dropone1 {
+  position: relative;
+  font-size: 20px;
+  animation: movebinary3 13s;
+  animation-iteration-count: infinite;
+  animation-delay: 4.6s;
+  color: grey;
+  z-index: -22;
+  opacity: 0;
+ }
+ .dropone2{
+  position: relative;
+  font-size: 20px;
+  animation: movebinary4 13s;
+  animation-iteration-count: infinite;
+  animation-delay: 1s;
+  color: grey;
+  z-index: -23;
+  opacity: 0;
+ }
+ .dropone3{
+  position: relative;
+  font-size: 20px;
+  animation: movebinary5 13s;
+  animation-iteration-count: infinite;
+  animation-delay: 8s;
+  color: grey;
+  z-index: -24;
+  opacity: 0; 
+ 
+ }
+ 
+ @keyframes movebinary1{
+   0%{opacity:0}
+   30%{opacity:0.5}
+   50%{opacity:1}
+   100%{opacity:0}
+   from{left: 500px; top: 0px;}
+   to{left: 500px; top: 1000px;}
+ }
+ @keyframes movebinary2{
+   0%{opacity:0}
+   30%{opacity:0.5}
+   50%{opacity:1}
+   100%{opacity:0}
+   from{left: 950px; top: 0px;}
+   to{left: 950px; top: 1000px;}
+ }
+ @keyframes movebinary3{
+   0%{opacity:0}
+   30%{opacity:0.5}
+   50%{opacity:1}
+   100%{opacity:0}
+   from{left: 600px; top: 0px;}
+   to{left: 600px; top: 1000px;}
+ }
+ @keyframes movebinary4{
+   0%{opacity:0}
+   30%{opacity:0.5}
+   50%{opacity:1}
+   100%{opacity:0}
+   from{left: 200px; top: 0px;}
+   to{left: 200px; top: 1000px;}
+ }
+ @keyframes movebinary5{
+   0%{opacity:0}
+   30%{opacity:0.5}
+   50%{opacity:1}
+   100%{opacity:0}
+   from{left: 670px; top: 0px;}
+   to{left: 670px; top: 1000px;}
+ }
+ /*---Background binary animation and settings---*/
