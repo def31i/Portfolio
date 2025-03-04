@@ -8,7 +8,68 @@ body {
   background-image: url(../actualbackground.jpg);
   background-repeat: no-repeat ;
   background-attachment: fixed;
+  background-size: cover;
 }
+
+/*top wrapper animation only applied on PCs/Desktops*/
+@media (min-width:1025px) {
+.topwrapper a {
+  position: relative; 
+}
+
+.topwrapper a::before {
+  content: "";
+  position: absolute; 
+  bottom: 0; 
+  left: 0; 
+  height: 1.5px;
+  width: 0%; 
+  background-color: white; 
+  transition: 100ms; 
+}
+
+.topwrapper a:hover::before {
+  width: 100%; 
+}
+}
+
+
+
+
+
+/*---Github and linkedinicon settings--*/
+@media (min-width:1025px) {
+.githubicon {
+  position:absolute;
+  left: 747px;
+  top: 19px;
+  transition: 100ms;
+  height: 30px;
+  width: 30px;
+}
+.linkedinicon {
+  position:absolute;
+  left: 857px;
+  top: 21.5px;
+  transition: 100ms;
+  height: 30px;
+  width: 30px;
+}
+.githubicon:hover , .linkedinicon:hover {
+  transform: scale(1.4,1.4)
+}
+}
+
+@media (max-width:1024px) {
+  .githubicon {
+    display: none;
+  }
+  .linkedinicon {
+    display: none;
+  }
+}
+/*----Github icon and linkedin settings*/
+
 
 @media (max-width:600px) {
   .topwrapper {
@@ -22,7 +83,6 @@ body {
 }
 .topwrapper {
   display:flex; 
-  background: lightgray;
   justify-content: center;
   align-content:center;
   width: 100%;
@@ -30,7 +90,7 @@ body {
   flex: 1 1 0;
 }
 
-.Home, .Projects, .About, .Contact, .Github, .link {
+.Home, .Projects, .About, .Contact, .Github, .Linkedin{
   position: static;
   border: 0px;
   padding: 0px;
@@ -41,7 +101,6 @@ body {
 .introwrapper {
   display: flex;
   position: relative;
-  background-color: white;
   width: 100%;
   justify-content: center;
   top:200px;
@@ -101,7 +160,6 @@ body {
   width: 100%;
   justify-content: center;
   top: 400px;
-  background-color: grey;
 }
 
 .aboutword {
@@ -120,18 +178,21 @@ body {
 
 .aboutinfocontainer {
   position: relative;
-  background-color: grey;
   display:flex;
   justify-content: center;
-  width: 100%;
+  width: 350px;
+  flex-wrap:wrap;
+  flex-shrink: 2;
   height: 100px;
-  top: 450px;
+  top: 480px;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .aboutinfocontainer div {
-  font-size: 15px;
+  text-align:center;
+  font-size: 18px;
   color: white;
-  text-align: center;
 }
 
 
@@ -141,7 +202,6 @@ body {
     position: relative;
     display:flex;
     justify-content: center;
-    background-color: green;
     width: 100%;
     height: 10px;
     top: 460px;
@@ -151,7 +211,6 @@ body {
   }
    .ccontainer, .cpluscontainer, .pythoncontainer, .htmlcontainer, .csscontainer, .jscontainer, .reactcontainer {
     display: flex;
-    background-color: green;
     height: 30px;
     bottom: 10px;
     margin: 5px;
@@ -171,7 +230,6 @@ body {
   position: relative;
   display:flex;
   justify-content:center;
-  background-color: grey;
   width: 100%;
   height: 80px;
   top: 540px;
@@ -181,7 +239,6 @@ body {
 
 .ccontainer, .cpluscontainer, .pythoncontainer, .htmlcontainer, .csscontainer, .jscontainer, .reactcontainer {
  display: flex;
- background-color: green;
  height: 60px;
  bottom: 10px;
  margin: 10px;
@@ -228,7 +285,10 @@ body {
   50% {opacity: 0.15}
   100% {opacity: 1}
 }
-@media (min-width:601px) { 
+
+
+
+@media (min-width:1025px) { 
  .projectscontainer {
   position: absolute;
   display:flex;
@@ -240,18 +300,18 @@ body {
   transform: translate(-50%, -50%);
  }
 }
- @media (min-width:601px) {
+ @media (min-width:1025px) {
   .projectscontainer a {
   width: 400px;
   font-size: 20px;
   color: white;
-  display:flex;
   justify-content: center;
+  display:flex;
   transition: 200ms;
  }
 }
 
- @media (min-width:601px) {
+ @media (min-width:1025px) {
  .gameenginecontainer, .pincontainer, .fileorganizercontainer {
   position: relative;
   display: flex;
@@ -268,7 +328,7 @@ body {
 
  }
 
-@media (min-width:601px){
+@media (min-width:1025px){
 .gameenginecontainer img, .pincontainer img, .fileorganizercontainer img {
   position: absolute;
   top: 30px;
@@ -282,11 +342,10 @@ body {
 
 
 
-@media (max-width:600px) {
+@media (max-width:1024px) {
   .projectscontainer {
     position: relative;
     display:flex;
-    background-color: blue;
     flex-direction: column;
     justify-content: space-between;
     align-items:center;
@@ -295,7 +354,7 @@ body {
     top: 900px;
   }
    .projectscontainer a {
-      text-align: center;
+      text-align:center;
       font-size: 11px;
       margin: 10px;
       box-sizing: border-box;
@@ -308,11 +367,11 @@ body {
       .gameenginecontainer img, .pincontainer img, .fileorganizercontainer img {
         position: relative;
         margin: 0px;
-        height: 110px;
-        width: 200px;
-        padding:  0px;
+        height: 150px;
+        width:  150px;
+        padding:  10px;
         color: white;
-        border-radius: 10px;
+        border-radius: 14px;
     
    
   }
