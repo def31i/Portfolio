@@ -392,6 +392,14 @@ body {
 
 
 /*---Binary background animations and settings---*/
+@media (max-width:1024px){
+.dropone1,.dropone2,.dropone3,.dropzero1,.dropzero2 {
+
+  display:none;
+}
+}
+
+@media (min-width:1025px) {
 .dropzero1 {
   position: relative;
   font-size: 20px;
@@ -485,5 +493,6 @@ body {
    100%{opacity:0}
    from{left: 670px; top: 0px;}
    to{left: 670px; top: 1000px;}
+  }
  }
- /*---Background binary animation and settings---*/
+ /*Binary animation settings */
